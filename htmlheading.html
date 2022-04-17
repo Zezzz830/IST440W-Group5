@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale=1.0"> 
+        <title>EasyRateIt</title>
+        <link rel="stylesheet" href="heading.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawSarahChart);
+    google.charts.setOnLoadCallback(drawAnthonyChart);
+    
+    function drawAnthonyChart() {
+
+// Create the data table for Anthony's pizza.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+        ['positive reviews', 2],
+        ['negative reviews', 2],
+        ['neutral reviews', 2],
+      ]);
+
+      // Set options for Anthony's pie chart.
+      var options = {title:'Review Percentage Visualization', 
+                     
+                    width:400,
+                    height:300};
+
+      // Instantiate and draw the chart for Anthony's pizza.
+      var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+      chart.draw(data, options);
+      }
+    function drawSarahChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'neutral reviews');
+      data.addColumn('number', 'negative reviews');
+      data.addColumn('number', 'positive reviews');
+
+      data.addRows([
+        [0, 0, 0],    [1, 3, 3],   [2, 2, 5],  [3, 2, 8],   [4, 5, 9],  [5, 6, 10],
+      
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'number of reivews'
+        },
+        colors: ['#AB0D06', '#007329'],
+     //   trendlines: {
+    //      0: {type: 'exponential', color: '#333', opacity: 0},
+       //   1: {type: 'linear', color: '#111', opacity: .0}
+     //   }
+      }; 
+
+      var chart = new google.visualization.LineChart(document.getElementById('Sarah_chart_div'));
+      chart.draw(data, options);
+    }
+    
+          </script>
+    </head>
+<body>
+    <h1> Amazon Product Review</h1>
+        <p style = "text-align: center;margin: 0;font-size: 50px;">Overall rating:4.5/5
+        </p>
+ 
+    
+    <div class="box">
+        <p>
+           Total Reivew Count: 4,000  
+        </p>
+      </div> 
+    
+    <div class="box1">
+        <p>Positive Reviews</p>
+    
+    </div> 
+    <b style = "position:relative; left: 100px;">Most Helpful Comments:
+    </b>
+        <ul>
+        <li>"Product is great!"</li>
+        <li>"Best product i've ever used!"</li>
+        <li>"Definitely recommended"</li>
+        </ul>
+
+    <b style = "position:relative; left: 100px;bottom: 300px;">Most Seen Words:
+    </b>
+    <img src="C:\Users\zedzh\OneDrive - The Pennsylvania State University\Desktop\positive_review.jpeg"  style="width: 500px; height: 300px;position:relative;right: 80px;top: 50px;margin-bottom: 20px;">
+    <div class="box2">
+        <p>Neutral Reviews</p>
+    </div> 
+    <b style = "position:relative; left: 100px;">Most Helpful Comments:
+    </b>
+        <ul>
+        <li>"Product is alright!"</li>
+        <li>"Not bad."</li>
+        <li>"Not as good as I thought"</li>
+        </ul>
+        <b style = "position:relative; left: 100px;bottom: 290px;">Most Seen Words:
+        </b>
+        <img src="C:\Users\zedzh\OneDrive - The Pennsylvania State University\Desktop\neutral_review.jpeg"   style="width: 500px; height: 300px; position: relative; top: 30px;right: 80px;">
+    
+    <div class="box3">
+        <p>Negative Reviews</p>
+    </div> 
+    <b style = "position:relative; left: 100px;">Most Helpful Comments:
+    </b>
+        <ul>
+        <li>"Product is awful!"</li>
+        <li>"Wouldn't buy it again."</li>
+        <li>"Don't buy, biggest regret"</li>
+        </ul>
+        <b style = "position:relative; left: 100px;bottom: 290px;">Most Seen Words:
+        </b>
+        <img src="C:\Users\zedzh\OneDrive - The Pennsylvania State University\Desktop\negative_review.png"  style="width: 500px; height: 300px; position: relative; top: 30px;right: 80px;">
+   <!--<div id="piechart" style="width: 400px; height: 300px; position: absolute;left: 50em;bottom: 20em;"></div> -->
+   <p style=" position: relative;left: 28cm;bottom: 46cm;">Data Analyzed at: 3/29/2022</p>
+   <table class="columns">
+    <tr>
+      <td><div id="Sarah_chart_div" style="width: 450px; height: 250px; position: absolute;left: 50em;bottom: 4em" ></div></td>
+      <td><div id="Anthony_chart_div" style="border: 1px solid #ccc; position: absolute;left: 50em;bottom: 18em"></div></td>
+    </tr>
+  </table>
+
+    <div class="ClickMe">
+        <a href="index.html"><button >Return</button></a>
+    </div>
+    <!--
+    <div class="container">
+      <a href="authenticate.html"class = "btn-1"> View Authentic Reviews </a>
+    </div> 
+    <div id="vis_div" style="width: 600px; height: 400px;"></div>
+    </div> -->
+
+</body>
+</html>
